@@ -17,3 +17,9 @@ let result = userCheck.test(username);
 
 ^[a-z]\d\d+$ - starts with an alphabet, ends with two or more digits (username has to be 3 or more chars).
 */
+
+
+//Use lookaheads in the pwRegex to match passwords that are greater than 5 characters long, and have two consecutive digits.
+let sampleWord = "astronaut";
+let pwRegex = /(?=\w{6,})(?=\w*\d{2})/; // Change this line
+let result = pwRegex.test(sampleWord);
