@@ -20,7 +20,21 @@ function rot13(str) {
     return changed.join('')
   }
 
-//solutu]ion two (optimized)
+//solution two (optimized)
+function rot13(str) {
+  var alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  var cipher = 'NOPQRSTUVWXYZABCDEFGHIJKLM'
+  var arr = str.split('')
+  var changed = []
+  for (var i=0; i<arr.length; i++){
+    if (alphabets.includes(arr[i])) {
+      changed.push(cipher[alphabets.indexOf(arr[i])])
+    } else {
+      changed.push(arr[i])
+    }
+  }
+  return changed.join('')
+  }
 
 
 rot13("SERR PBQR PNZC");
